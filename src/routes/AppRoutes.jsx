@@ -1,4 +1,5 @@
-import { Home } from 'lucide-react';
+
+import Home from '@/pages/Home';
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
 
