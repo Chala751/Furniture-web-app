@@ -11,7 +11,7 @@ export default function Header() {
   }
 
   return (
-    <header className="w-full border-b bg-[#F1E0C6] shadow-sm sticky top-0 z-10">
+    <header className="w-full border-b bg-[#F1E0C6] shadow-sm sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center ">
         {/* Logo */}
         <div className="text-2xl font-bold text-[#6B4F3C] tracking-tight cursor-pointer">
