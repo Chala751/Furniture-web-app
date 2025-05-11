@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false) 
 
-  // Toggle the menu on button click
+  
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
@@ -45,7 +45,7 @@ export default function Header() {
           <Button
             variant="outline"
             size="icon"
-            className="text-[#6B4F3C] border-[#6B4F3C] hover:bg-[#F1C40F]"
+            className="text-[#6B4F3C] border-[#6B4F3C] hover:bg-[#F1C40F] cursor-pointer"
             onClick={toggleMenu}
           >
             {isMenuOpen ? <X size={18} /> : <Menu size={18} />} {/* Toggle between Menu and X */}
@@ -69,15 +69,21 @@ export default function Header() {
         className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-[#F1E0C6] py-4`}
       >
         <div className="flex flex-col items-center space-y-4 text-sm font-medium text-[#6B4F3C]">
-          <Button variant="ghost" className="text-[#6B4F3C] hover:bg-[#F1C40F]">
+          <Link to="/shop" onClick={() => setIsMenuOpen(false)}>
+            <Button variant="ghost" className="text-[#6B4F3C] hover:bg-[#F1C40F] cursor-pointer">
             Shop
-          </Button>
-          <Button variant="ghost" className="text-[#6B4F3C] hover:bg-[#F1C40F]">
+            </Button>
+          </Link>
+          <Link to="/shop" onClick={() => setIsMenuOpen(false)}>
+            <Button variant="ghost" className="text-[#6B4F3C] hover:bg-[#F1C40F] cursor-pointer">
             About
-          </Button>
-          <Button variant="ghost" className="text-[#6B4F3C] hover:bg-[#F1C40F]">
+            </Button>
+          </Link>
+          <Link to="/shop" onClick={() => setIsMenuOpen(false)}>
+            <Button variant="ghost" className="text-[#6B4F3C] hover:bg-[#F1C40F] cursor-pointer">
             Contact
-          </Button>
+            </Button>
+          </Link>
         </div>
       </div>
     </header>
