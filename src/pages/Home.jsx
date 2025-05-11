@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from '../componentes/ui/button'
 import { Card, CardContent } from '../componentes/ui/card'
 import { Truck, Star, RefreshCcw, Quote } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   return (
@@ -16,9 +17,11 @@ export default function Home() {
             <p className="mb-8 text-lg">
               Make your home a stylish haven with our hand-picked collection of beautifully crafted furniture.
             </p>
-            <Button className="bg-[#6B4F3C] text-white hover:bg-[#5A3F30] px-6 py-2">
-              Shop Now
-            </Button>
+            <Link to="/shop">
+              <Button className="bg-[#6B4F3C] text-white hover:bg-[#5A3F30] px-6 py-2 cursor-pointer">
+                Shop Now
+              </Button>
+            </Link>
           </div>
           <Card className="bg-white shadow-lg rounded-xl overflow-hidden">
             <CardContent className="p-0">
@@ -110,9 +113,11 @@ export default function Home() {
             <p className="mb-8 text-lg">
               Make your home a stylish haven with our hand-picked collection of beautifully crafted furniture.
             </p>
-            <Button className="bg-[#6B4F3C] text-white hover:bg-[#5A3F30] px-6 py-2">
-              Shop Now
-            </Button>
+            <Link to="/shop">
+              <Button className="bg-[#6B4F3C] text-white hover:bg-[#5A3F30] px-6 py-2 cursor-pointer">
+                Shop Now
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
