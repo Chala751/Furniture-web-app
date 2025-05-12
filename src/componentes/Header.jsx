@@ -35,7 +35,7 @@ export default function Header() {
           </Link>
           <Link to="/shop">
             <Button variant="ghost" className="text-[#6B4F3C] hover:bg-[#F1C40F] cursor-pointer">
-            Shop
+            Contact
             </Button>
           </Link>
         </div>
