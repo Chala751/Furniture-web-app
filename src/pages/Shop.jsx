@@ -19,7 +19,7 @@ export default function Shop() {
 
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-12">
+    <section className=" bg-[#F1E0C6] max-w-7xl mx-auto px-4 py-12">
       <h2 className="text-3xl font-bold text-[#6B4F3C] mb-8 text-center">
         Explore Our Furniture Collection
       </h2>
