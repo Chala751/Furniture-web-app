@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Search } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 
 export default function Shop() {
@@ -53,11 +54,13 @@ export default function Shop() {
               key={product.id}
               className="bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 overflow-hidden"
             >
-              <img
+              <Link  to={`/product/${product.id}`} key={product.id}>
+               <img
                 src={product.thumbnail}
                 alt={product.title}
                 className="w-full h-48 object-cover cursor-pointer"
-              />
+               />
+              </Link>
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-[#6B4F3C]">
                   {product.title}

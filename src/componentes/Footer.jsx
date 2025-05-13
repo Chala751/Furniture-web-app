@@ -1,5 +1,5 @@
 import React from 'react'
-import { Facebook, Instagram, Twitter } from 'lucide-react'
+import { Facebook, Instagram, Twitter ,Linkedin} from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -31,6 +31,7 @@ export default function Footer() {
             <a href="#" className="hover:text-[#F1C40F] transition-colors duration-200"><Facebook size={20} /></a>
             <a href="#" className="hover:text-[#F1C40F] transition-colors duration-200"><Instagram size={20} /></a>
             <a href="#" className="hover:text-[#F1C40F] transition-colors duration-200"><Twitter size={20} /></a>
+            <a href="#" className="hover:text-[#F1C40F] transition-colors duration-200"><Linkedin size={20} /></a>
           </div>
         </div>
       </div>
