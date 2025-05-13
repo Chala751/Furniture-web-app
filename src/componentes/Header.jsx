@@ -3,6 +3,7 @@ import { Button } from '../componentes/ui/button'
 import { ShoppingCart, Menu, X } from 'lucide-react' 
 import { Link } from 'react-router-dom'
 
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false) 
 
@@ -23,6 +24,11 @@ export default function Header() {
 
         {/* Nav Links for Large Screens */}
         <div className="hidden md:flex space-x-6 text-sm font-medium text-[#6B4F3C]">
+          <Link to="/">
+            <Button variant="ghost" className="text-[#6B4F3C] hover:bg-[#F1C40F] cursor-pointer">
+            Home
+            </Button>
+          </Link>
           <Link to="/shop">
             <Button variant="ghost" className="text-[#6B4F3C] hover:bg-[#F1C40F] cursor-pointer">
             Shop
@@ -69,6 +75,11 @@ export default function Header() {
         className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-[#F1E0C6] py-4`}
       >
         <div className="flex flex-col items-center space-y-4 text-sm font-medium text-[#6B4F3C]">
+          <Link to="/" onClick={() => setIsMenuOpen(false)}>
+            <Button variant="ghost" className="text-[#6B4F3C] hover:bg-[#F1C40F] cursor-pointer">
+            Home
+            </Button>
+          </Link>
           <Link to="/shop" onClick={() => setIsMenuOpen(false)}>
             <Button variant="ghost" className="text-[#6B4F3C] hover:bg-[#F1C40F] cursor-pointer">
             Shop
