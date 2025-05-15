@@ -34,12 +34,12 @@ export default function Header() {
             Shop
             </Button>
           </Link>
-          <Link to="/shop">
+          <Link to="/about">
             <Button variant="ghost" className="text-[#6B4F3C] hover:bg-[#F1C40F] cursor-pointer">
             About
             </Button>
           </Link>
-          <Link to="/shop">
+          <Link to="/">
             <Button variant="ghost" className="text-[#6B4F3C] hover:bg-[#F1C40F] cursor-pointer">
             Contact
             </Button>
@@ -85,7 +85,7 @@ export default function Header() {
             Shop
             </Button>
           </Link>
-          <Link to="/shop" onClick={() => setIsMenuOpen(false)}>
+          <Link to="/about" onClick={() => setIsMenuOpen(false)}>
             <Button variant="ghost" className="text-[#6B4F3C] hover:bg-[#F1C40F] cursor-pointer">
             About
             </Button>
