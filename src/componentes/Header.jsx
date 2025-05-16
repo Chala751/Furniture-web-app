@@ -39,7 +39,7 @@ export default function Header() {
             About
             </Button>
           </Link>
-          <Link to="/">
+          <Link to="/contact">
             <Button variant="ghost" className="text-[#6B4F3C] hover:bg-[#F1C40F] cursor-pointer">
             Contact
             </Button>
@@ -90,7 +90,7 @@ export default function Header() {
             About
             </Button>
           </Link>
-          <Link to="/shop" onClick={() => setIsMenuOpen(false)}>
+          <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
             <Button variant="ghost" className="text-[#6B4F3C] hover:bg-[#F1C40F] cursor-pointer">
             Contact
             </Button>
