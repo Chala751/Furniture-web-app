@@ -33,7 +33,7 @@ export default function Contact() {
           <Input type="text" placeholder="Your Name" required />
           <Input type="email" placeholder="Your Email" required />
           <Textarea placeholder="Your Message..." rows={5} required />
-          <Button type="submit" className="bg-[#6B4F3C] hover:bg-[#5a3f30] text-white">
+          <Button type="submit" className="bg-[#6B4F3C] hover:bg-[#5a3f30] text-white cursor-pointer">
             Submit
           </Button>
         </motion.form>
