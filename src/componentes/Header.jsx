@@ -48,6 +48,7 @@ export default function Header() {
         {/* Cart + User Icons */}
         <div className="flex items-center space-x-3">
           {/* Cart */}
+          <Link to="/cart">
           <Button
             variant="outline"
             size="icon"
@@ -55,6 +56,7 @@ export default function Header() {
           >
             <ShoppingCart size={18} />
           </Button>
+          </Link>
 
           {/* User Dropdown */}
           <DropdownMenu>
