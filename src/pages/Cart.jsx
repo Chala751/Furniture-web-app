@@ -1,11 +1,34 @@
-import React from 'react'
+import React from "react";
+import { useCart } from "../context/CartContext";
+import { Button } from "../componentes/ui/button";
 
-function Cart() {
+export default function Cart() {
+  const { cartItems, removeFromCart } = useCart();
+
   return (
-    <div>
-      
-    </div>
-  )
+    <section className="p-6 max-w-3xl mx-auto">
+      <h2 className="text-2xl font-bold text-[#6B4F3C] mb-4">Your Cart</h2>
+      {cartItems.length === 0 ? (
+        <p className="text-gray-600">Your cart is empty.</p>
+      ) : (
+        <ul className="space-y-4">
+          {cartItems.map((item, index) => (
+            <li key={index} className="bg-white p-4 rounded-lg shadow flex justify-between items-center">
+              <div>
+                <h4 className="text-[#6B4F3C] font-medium">{item.name}</h4>
+                <p className="text-gray-600">${item.price}</p>
+              </div>
+              <Button
+                variant="outline"
+                onClick={() => removeFromCart(item.id)}
+                className="text-red-500 border-red-500"
+              >
+                Remove
+              </Button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  );
 }
-
-export default Cart

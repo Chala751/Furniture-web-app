@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { Search } from 'lucide-react'
 import { Link } from 'react-router-dom'
-
+import { useCart } from '../context/CartContext'
+import { toast } from 'sonner' 
 
 export default function Shop() {
   const [products, setProducts] = useState([])
   const [search, setSearch] = useState('')
   const [visibleCount, setVisibleCount] = useState(6)
+
+  const { addToCart } = useCart()
 
   useEffect(() => {
     fetch('https://dummyjson.com/products?limit=100')
@@ -22,10 +25,14 @@ export default function Shop() {
       })
   }, [])
 
-  // Filtered products based on search input
   const filteredProducts = products.filter(product =>
     product.title.toLowerCase().includes(search)
   )
+
+  const handleAddToCart = (product) => {
+    addToCart(product)
+    toast.success(`${product.title} added to cart!`) // Optional toast
+  }
 
   return (
     <section className="bg-[#F1E0C6] min-h-screen max-w-7xl mx-auto px-4 py-12">
@@ -35,15 +42,14 @@ export default function Shop() {
 
       {/* Search Input */}
       <div className="relative max-w-md mx-auto mb-8">
-  <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#6B4F3C]" size={18} />
-  <input
-    type="text"
-    placeholder="Search furniture..."
-    className="w-full pl-10 pr-4 py-2 border border-[#6B4F3C] rounded focus:outline-none focus:ring-2 focus:ring-[#6B4F3C]"
-    onChange={(e) => setSearch(e.target.value.toLowerCase())}
-  />
-</div>
-
+        <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#6B4F3C]" size={18} />
+        <input
+          type="text"
+          placeholder="Search furniture..."
+          className="w-full pl-10 pr-4 py-2 border border-[#6B4F3C] rounded focus:outline-none focus:ring-2 focus:ring-[#6B4F3C]"
+          onChange={(e) => setSearch(e.target.value.toLowerCase())}
+        />
+      </div>
 
       {filteredProducts.length === 0 ? (
         <p className="text-center text-gray-600">No products found.</p>
@@ -54,12 +60,12 @@ export default function Shop() {
               key={product.id}
               className="bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 overflow-hidden"
             >
-              <Link  to={`/product/${product.id}`} key={product.id}>
-               <img
-                src={product.thumbnail}
-                alt={product.title}
-                className="w-full h-48 object-cover cursor-pointer"
-               />
+              <Link to={`/product/${product.id}`}>
+                <img
+                  src={product.thumbnail}
+                  alt={product.title}
+                  className="w-full h-48 object-cover cursor-pointer"
+                />
               </Link>
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-[#6B4F3C]">
@@ -70,7 +76,10 @@ export default function Shop() {
                 </p>
                 <p className="font-bold text-[#6B4F3C] text-lg">${product.price}</p>
                 <p className="text-sm text-yellow-600 font-medium">⭐ {product.rating} / 5</p>
-                <button className="mt-3 w-full bg-[#6B4F3C] text-white text-sm py-2 rounded hover:bg-[#5a3f30] transition cursor-pointer">
+                <button
+                  onClick={() => handleAddToCart(product)}
+                  className="mt-3 w-full bg-[#6B4F3C] text-white text-sm py-2 rounded hover:bg-[#5a3f30] transition cursor-pointer"
+                >
                   Add to Cart
                 </button>
               </div>
