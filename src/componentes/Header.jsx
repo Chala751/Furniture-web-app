@@ -3,6 +3,7 @@ import { Button } from '../componentes/ui/button'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/componentes/ui/dropdown-menu'
 import { ShoppingCart, Menu, X, User } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { useCart } from '../context/CartContext'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -10,6 +11,9 @@ export default function Header() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
+
+  const { cartItems } = useCart()
+  const cartCount = cartItems.length
 
   return (
     <header className="w-full border-b bg-[#F1E0C6] shadow-sm sticky top-0 z-50">
@@ -48,14 +52,13 @@ export default function Header() {
         {/* Cart + User Icons */}
         <div className="flex items-center space-x-3">
           {/* Cart */}
-          <Link to="/cart">
-          <Button
-            variant="outline"
-            size="icon"
-            className="text-[#6B4F3C] border-[#6B4F3C] hover:bg-[#F1C40F] cursor-pointer"
-          >
-            <ShoppingCart size={18} />
-          </Button>
+          <Link to="/cart" className="relative">
+            <ShoppingCart size={22} />
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                  {cartCount}
+                </span>
+                )}
           </Link>
 
           {/* User Dropdown */}

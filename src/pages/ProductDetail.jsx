@@ -2,16 +2,23 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Button } from '../componentes/ui/button'
 import { Link } from 'react-router-dom'
+import { useCart } from '../context/CartContext'
 
 export default function ProductDetail() {
   const { id } = useParams()
   const [product, setProduct] = useState(null)
+   const { addToCart } = useCart()
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${id}`)
       .then(res => res.json())
       .then(data => setProduct(data))
   }, [id])
+
+   const handleAddToCart = (product) => {
+    addToCart(product)
+    toast.success(`${product.title} added to cart!`) // Optional toast
+  }
 
   if (!product) {
     return (
@@ -46,7 +53,7 @@ export default function ProductDetail() {
             </p>
           </div>
 
-          <button className="mt-4 bg-[#6B4F3C] text-white py-2 px-6 rounded hover:bg-[#5a3f30] transition cursor-pointer">
+          <button onClick={() => handleAddToCart(product)} className="mt-4 bg-[#6B4F3C] text-white py-2 px-6 rounded hover:bg-[#5a3f30] transition cursor-pointer">
             Add to Cart
           </button>
         </div>
