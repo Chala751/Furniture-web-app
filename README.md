@@ -27,7 +27,7 @@
 ---
 
 ## 📁 Folder Structure
-src/
+src /
 ├── components/
 │ └── ui/ # ShadCN styled input, textarea, button, etc.
 ├── pages/
@@ -39,7 +39,7 @@ src/
 ├── App.jsx
 ├── main.jsx
 └── lib/
-└── utils.js # Utility functions (e.g., cn)
+└── utils.js 
 
 📦 Deployment
 coming soon....
