@@ -4,6 +4,7 @@ import Cart from '@/pages/Cart';
 import Contact from '@/pages/Contact';
 import Home from '@/pages/Home';
 import ProductDetail from '@/pages/ProductDetail';
+import Register from '@/pages/Register';
 import Shop from '@/pages/Shop';
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
@@ -17,6 +18,7 @@ const AppRoutes = () => {
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/cart" element={<Cart/>} />
+        <Route path="/register" element={<Register/>} />
     </Routes>
   )
 }
