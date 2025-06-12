@@ -12,19 +12,19 @@ const aboutSections = [
     title: 'Our Story',
     content:
       'FurniStyle was born from a passion for blending comfort and elegance. What started as a small workshop is now a beloved furniture brand serving thousands of happy homes.',
-    image: {abt1},
+    image: abt1,
   },
   {
     title: 'Our Mission',
     content:
       'To create quality, sustainable furniture that brings beauty and functionality to every living space.',
-    image: {abt2},
+    image: abt2,
   },
   {
     title: 'Our Values',
     content:
       'We stand for craftsmanship, honesty, and customer satisfaction. Every product we offer is a reflection of these values.',
-    image: {abt3},
+    image: abt3,
   },
 ]
 
