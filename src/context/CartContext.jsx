@@ -11,7 +11,6 @@ export const CartProvider = ({ children }) => {
   const addToCart = (product) => {
     const existingItem = cartItems.find(item => item.id === product.id)
     if (existingItem) {
-      // Optional: Increase quantity if product already exists
       setCartItems(prev =>
         prev.map(item =>
           item.id === product.id
