@@ -1,4 +1,6 @@
 import React from 'react'
+import heroImg from '@/assets/hero-furniture.jpg';
+import heroImg2 from '@/assets/hero-furniture2.jpg';
 import { Button } from '../componentes/ui/button'
 import { Card, CardContent } from '../componentes/ui/card'
 import { Truck, Star, RefreshCcw, Quote } from 'lucide-react'
@@ -26,7 +28,7 @@ export default function Home() {
           <Card className="bg-white shadow-lg rounded-xl overflow-hidden">
             <CardContent className="p-0">
               <img
-                src="./src/assets/hero furniture.jpg"
+                src={heroImg}
                 alt="Modern Furniture"
                 className="w-full h-[350px] object-cover"
               />
@@ -100,7 +102,7 @@ export default function Home() {
           <Card className="bg-white shadow-lg rounded-xl overflow-hidden">
             <CardContent className="p-0">
               <img
-                src="./src/assets/hero furniture2.jpg"
+                src={heroImg2}
                 alt="Modern Furniture"
                 className="w-full h-[350px] object-cover"
               />

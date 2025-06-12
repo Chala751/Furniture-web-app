@@ -1,4 +1,7 @@
 import React from 'react'
+import abt1 from '@/assets/about1.jpg';
+import abt2 from '@/assets/about2.jpg';
+import abt3 from '@/assets/about3.jpg';
 import { Card, CardContent } from '@/componentes/ui/card'
 import { motion } from 'framer-motion'
 import { CheckCircle, Truck, Leaf, Sparkles } from 'lucide-react'
@@ -9,19 +12,19 @@ const aboutSections = [
     title: 'Our Story',
     content:
       'FurniStyle was born from a passion for blending comfort and elegance. What started as a small workshop is now a beloved furniture brand serving thousands of happy homes.',
-    image: './src/assets/about1.jpg',
+    image: {abt1},
   },
   {
     title: 'Our Mission',
     content:
       'To create quality, sustainable furniture that brings beauty and functionality to every living space.',
-    image: './src/assets/about3.jpg',
+    image: {abt2},
   },
   {
     title: 'Our Values',
     content:
       'We stand for craftsmanship, honesty, and customer satisfaction. Every product we offer is a reflection of these values.',
-    image: './src/assets/about2.jpg',
+    image: {abt3},
   },
 ]
 
