@@ -42,7 +42,7 @@ src /
 └── utils.js 
 
 📦 Deployment
-coming soon....
+👉 [furniture-web-app-two.vercel.app](https://furniture-web-app-two.vercel.app)
 
 
 
