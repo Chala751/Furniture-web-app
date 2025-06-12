@@ -1,5 +1,7 @@
 import React from 'react'
 import { Facebook, Instagram, Twitter ,Linkedin} from 'lucide-react'
+import { Link } from 'react-router-dom';
+
 
 export default function Footer() {
   return (
@@ -16,12 +18,13 @@ export default function Footer() {
         {/* Links */}
         <div>
           <h4 className="text-lg font-medium mb-4">Quick Links</h4>
-          <ul className="space-y-2 text-sm text-[#F1E0C6]">
-            <li><a href="/" className="hover:underline">Home</a></li>
-            <li><a href="/shop" className="hover:underline">Shop</a></li>
-            <li><a href="/about" className="hover:underline">About</a></li>
-            <li><a href="/contact" className="hover:underline">Contact</a></li>
-          </ul>
+           <ul className="space-y-2 text-sm text-[#F1E0C6]">
+             <li><Link to="/" className="hover:underline">Home</Link></li>
+             <li><Link to="/shop" className="hover:underline">Shop</Link></li>
+            <li><Link to="/about" className="hover:underline">About</Link></li>
+            <li><Link to="/contact" className="hover:underline">Contact</Link></li>
+           </ul>
+
         </div>
 
         {/* Social Media */}
